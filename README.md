@@ -55,7 +55,9 @@ Mais ça, ce n'est que l'introduction... Il y a bien des choses à faire et à a
 ## Où en apprendre d'avantage ?
 
 Je vous conseille de vous rendre sur [Scrimba](https://scrimba.com/ "Lien vers Scrimba") :uk:, une plateforme de cours interactifs, vous pourrez trouver un [cours](https://scrimba.com/g/gR8PTE "Lien vers le cours") vraiment complet à ce sujet.  
-
+  
+Mais pour rappel, il y a aussi un cours dédié au sujet sur [Codecademy](https://www.codecademy.com/courses/learn-css-grid/lessons/css-grid-i/exercises/grid-intro?action=lesson_resume&course_redirect=learn-css "Lien vers le cours").
+  
 
 ## Utilisation concrète
 
