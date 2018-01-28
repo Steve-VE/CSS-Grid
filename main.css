@@ -8,70 +8,103 @@ body{
 .container{
     margin: auto;
     width: 60%;
+    height: 80%;   
     display: grid;
     grid-gap: 4px;
 
-    /* Pour définir la taille de la grille, on change de logique...
-    Ici, on va plutot diviser la grille en 10 lignes et 12 colonnes
-    et ensuite assigner à chaque élément occupant la grille une dimension différente.
-    */
-    grid-template-rows: repeat(10, 1fr);
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px auto auto 50px;
+    grid-template-columns: 20% 80%;
 
-    /* Pour que le découpage soit plus facile à visualiser, 
-    j'ai placé une image de fond aux éléments qui constitue la grille. 
-    Comme pour une feuille quadrillée, vous pouvez voir la grille en fond. 
+    /* Une autre manière d'organiser sa grille est de définir des "areas".
+
+    Le grid-template-areas doit correspondre au template définit plus haut.
+    Ici, on a définit 4 lignes et 2 colonnes, on aura donc un template-area
+    constitué lui aussi de 4 lignes et 2 colonnes :
+
+            |    1-Column    2-Column
+    ----------------------------------
+    1-Row   |     Element     Element
+    2-Row   |     Element     Element
+    3-Row   |     Element     Element
+    4-Row   |     Element     Element
+
+    On aura donc le "grid-template-areas" suivant :
+        "Element Element"
+        "Element Element"
+        "Element Element"
+        "Element Element";
+
+    Ne reste plus qu'à renommer chaque élément et ensuite
+    à les assigner à ce que l'on souhaite.
+    */
+    grid-template-areas: 
+        "h h"
+        "m a"
+        "m c"
+        "f f";
+    /* Ici, je nomme les éléments comme ceci :
+        - h pour Header
+        - m pour Menu
+        - f pour Footer
+        - a pour Article
+        - c pour Contenu
     */
 }
 
 
 .header{
-    grid-column: 1 / -1;
-
-    /* On dit ici qu'on veut que le header occupe 
-    verticalement l'espace qui correspond à deux lignes.
-    */
-    grid-row: span 2;
-
-    background-image: url("img/12x2.png");
-    background-size: 100% 100%;
-}
-
-.footer{
-    grid-column: 1 / -1;
-
-    background-image: url("img/12x1.png");
-    background-size: 100% 100%;
+    /* On indique que le header occupera tout l'espace représenté par les h */
+    grid-area: h;
 }
 
 .menu{
-    /* Ici, on précise que notre menu doit faire
-    2 colonnes de largeur et
-    7 lignes de hauteur.
-     */
-    grid-column: span 2;
-    grid-row: span 7;
-
-    background-image: url("img/2x7.png");
-    background-size: 100% 100%;
-}
-
-.content{
-    grid-column: span 5;
-
-    background: url("img/5x1.png");
-    background-size: 100% 100%;
+    /* On indique que le menu occupera tout l'espace représenté par les m */
+    grid-area: m;
 }
 
 .featured{
-    grid-column: span 10;
-    grid-row: span 4;
+    /* On indique que l'article principal occupera tout l'espace représenté par les a */
+    grid-area: a;
+}
 
-    background-image: url("img/10x4.png");
-    background-size: 100% 100%;
+.footer{
+    /* On indique que le footer occupera tout l'espace représenté par les f */
+    grid-area: f;
+}
+
+.articles{
+    /* On indique que la liste d'articles occupera tout l'espace représenté par les c */
+    grid-area: c;
+
+    /* Pour l'exemple, j'en profite pour montrer qu'il est 
+    possible d'imbriquer une grille dans une grille.
+     */
+    display: grid !important;
+    /* Le "!important" est là pour forcer le display en grid
+    car un sélecteur d'avantage prioritaire (".container > div")
+    passait le display en flex. */
+
+    grid-gap: 8px;
+    grid-template: repeat(3, auto) / 50% 50%;
 }
 
 
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    grid-column: span 1;
+    grid-row: span 1;
+
+    background-color: rgb(15, 129, 206);
+    opacity: 0.5;
+}
+
+.content:hover{
+    opacity: 1;
+}
 
 
 .container > div{
@@ -82,7 +115,7 @@ body{
     padding: 10px;
     font-size: 2em;
     color: white;
-    background-color: rgb(151, 84, 240);
+    background-color: rgb(168, 138, 206);
     opacity: 0.5;
 }
 
