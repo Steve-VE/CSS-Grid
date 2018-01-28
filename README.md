@@ -54,4 +54,20 @@ Mais ça, ce n'est que l'introduction... Il y a bien des choses à faire et à a
 
 ## Où en apprendre d'avantage ?
 
-Sur [Scrimba](https://scrimba.com/ "Lien vers Scrimba") :uk:, une plateforme de cours interactifs, vous pourrez trouver un [cours](https://scrimba.com/g/gR8PTE "Lien vers le cours") vraiment complet à ce sujet.  
+Je vous conseille de vous rendre sur [Scrimba](https://scrimba.com/ "Lien vers Scrimba") :uk:, une plateforme de cours interactifs, vous pourrez trouver un [cours](https://scrimba.com/g/gR8PTE "Lien vers le cours") vraiment complet à ce sujet.  
+
+
+## Utilisation concrète
+
+Si vous suivez le cours ci-dessus, vous ferez comment il est possible de créer assez simplement une [galerie d'images](https://scrimba.com/p/pWqLHa/cBq3PsP "Lien vers le cours") où chaque élément trouve sa place, ou encore comment [mettre en page facilement un article](https://scrimba.com/p/pWqLHa/cdp76sD "Lien vers le cours").  
+  
+Les grilles CSS peuvent avoir des utilisations plus surprenantes et créatives que de simplement servir à établir le layout d'une page web.  
+Le designer *Benjamin De Cock* en fait une belle démonstration lors d'une [conférence](https://www.dotconferences.com/2017/11/benjamin-de-cock-css-grid-in-production "dotCSS 2017 - Benjamin De Cock - CSS Grid in Production") à l'occasion du [dotCSS 2017](https://www.dotcss.io/ "Lien vers dotCSS")
+  
+    
+## Ressources et informations supplémentaires
+- [Grid by Example](https://gridbyexample.com/ "Lien vers Grid by Example") :uk: : Une bibliothèque d'exemples, de cours et d'articles en sujet avec les grilles CSS... C'est un peu la caverne d'*Ali Baba* version *CSS Grid*.
+
+### Twitter 
+- [Benjamin De Cock](https://twitter.com/bdc "Lien vers le twitter de Benjamin De Cock") :uk:
+- [Per Harald Borgen](https://twitter.com/perborgen "Lien vers le twitter de Per Harald Borgen") :uk:
