@@ -1,3 +1,3 @@
 # CSS-Grid
 
-## Première étape : création et paramétrage d'une grille
+## Troisième étape : paramétrage avancé, le repeat
