@@ -10,60 +10,90 @@ body{
     width: 60%;
     display: grid;
     grid-gap: 4px;
-    
-    /* Remarquez qu'il n'y a plus de "grid-template-columns" et de "grid-template-rows", 
-    mais uniquement un grid-template...
-    En fait, il s'agit d'une autre manière (raccourci) qui permet d'écrire les deux en uns.
-    Dans le "grid-template", 
-    les paramètres se trouvant devant le "/" concernent les lignes (rows)
-    et les paramètres se trouvant derrière le "/" concernant les colonnes (columns).
 
-    Cette manière de définir un tableau est plus concisse que la précédente, 
-    mais un peu plus confuse à la lecture.
-    Elle n'est pas plus bonne ou plus mauvaise que la manière précédente,
-    choissisez simplement celle que vous trouvez la plus pratique. 
-    
-    Ici donc, on définit une grille qui aura :
-        - Des lignes de 50 px de hauteur;
-        - Et 4 colonnes donc la première aura une largeur de 4fr, 
-          et les trois suivante une largeur de 1fr.
-    */
-    grid-template: 50px /  4fr repeat(3, 1fr);
-
-    /* Comment fonctionne le repeat ici ?
-    À l'intérieur d'un repeat, entre parenthèse, on inscrit deux paramètres :
-        - Le premier indique le nombre de répétition;
-        - Le second indique la dimension à appliquer à chacune des répétitions.
-    Ainsi, puisqu'ici nous nous trouvons dans les paramètres concernant 
-    les colonnes (rappellez-vous, après le "/"), nous indiquons que nous voulons
-    une première colonne faisans 4 fractions de large, 
-    suivit par 3 colonnes faisant chacune 1 fraction de large.
-
-    Ecrire "4fr repeat(3, 1fr)" revient exactement au même 
-    qu'écrire "4fr 1fr 1fr 1fr", il s'agit encore une fois d'un raccourci plutôt pratique.
-    */
-    
+    grid-template-rows: 100px 50px;
+    grid-template-columns: repeat(3, 1fr);
 }
 
+
+.header{
+    /* Avec "grid-column-start", on indique où commence l'espace qu'occupe l'élément. */
+    grid-column-start: 1;
+
+    /* Avec "grid-column-end", on indique jusqu'où va l'espace qu'occupe l'élément.
+    */
+    grid-column-end: 4;
+
+    /* Ici, on indique donc que notre header devra occuper un espace dans le tableau qui part
+    de la première colonne (inclue) à la quatrième colonne (exclue).
+    En effet, faite le test, si on met "3" en "grid-column-end",
+    l'espace qu'occupe le header va s'arrêter juste avant la troisième colonne.
+
+    Encore une fois, il existe une manière raccourci d'écrire cela...
+    Ainsi, "grid-column : 1 / 4" revient exactement au même que ce 
+    que nous avons écrit ci-dessus ( le paramètre devant le "/" 
+    étant le "start" et celui derrière le "/" étant le "end" ).
+
+
+    Petite astuce :
+
+    Ici, on sait que la grille est constituée de 3 colonnes,
+    et que pour qu'un élément occupe toute la grille horizontalement,
+    il faut lui dire qu'il l'occupe jusqu'à la quatrième colonne.
+
+    Comment faire lorsque l'on ne connait pas d'avance le nombre 
+    de colonne constituant la grille ?
+
+    Il suffit d'utiliser un nombre négatif !
+    En effet, en utilisant un nombre négatif, on lui indique de partir 
+    de la gauche, donc de la fin, de la grille.
+
+    Ainsi, en faisant "grid-column-end: -1", l'espace qu'occupe cet
+    élément dans le tableau s'arrêtera à la dernière colonne (inclue).
+    */
+}
+
+.footer{
+    grid-column: 1 / span 3;
+     /* Ici, même si le résultat est le même, 
+     nous utilisons une technique légèrement différente... 
+        - Pour le paramètre start, aucun changement;
+        - Pour le paramètre de end par contre, le "span" permet de signifier 
+          que l'espace occupé doit correspondre à 3 colonnes.
+          Ainsi, au lieu de nous préoccuper de où doit s'arrêter
+          l'espace qu'occupe notre élément, on s'intéresse
+          directement au nombre de colonne qu'occupe notre élément.
+    */
+}
+
+.menu{
+    /* La même chose est bien évidemment valable pour les lignes. */
+    grid-row-start: 2;
+    grid-row-end: span 3;
+}
+
+
 .container > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     padding: 10px;
     font-size: 2em;
-    text-align: center;
     color: white;
-
     opacity: 0.5;
 }
 
-
 /* Les lignes qui suivent servent à colorer différenmment les éléments */
-.container > div:nth-child(1n){
-    background-color: rgb(218, 135, 28);
-}
 .container > div:nth-child(2n){
     background-color: rgb(15, 129, 206);
 }
-.container > div:nth-child(4n - 1){
+.container > div:nth-child(2n + 1){
     background-color: rgb(151, 84, 240);
+}
+.container > div:first-child,
+.container > div:last-child{
+    background-color: rgb(218, 135, 28);
 }
 /* .container > div:nth-child(4n){
     background-color: rgb(30, 179, 0);

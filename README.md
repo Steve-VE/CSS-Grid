@@ -1,3 +1,4 @@
 # CSS-Grid
 
-## Troisième étape : paramétrage avancé, le repeat
+## Quatrième étape
+### Paramétre(s) avancé(s) : Positionnement précis
