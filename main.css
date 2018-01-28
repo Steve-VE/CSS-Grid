@@ -1,0 +1,56 @@
+body{
+    display: flex;
+    height: 100vh;
+    margin: 10px;
+    font-family: sans-serif;
+}
+
+.container{
+    margin: auto;
+    width: 60%;
+    
+    /* "display: grid" pour indiquer que cet élément est une grille */
+    display: grid;
+    
+    /* "grid-template-columns" permet de définir le nombre et la dimension des colonnes constituant la grille */
+    grid-template-columns: 100px auto;
+    
+    /* "grid-template-rows" permet de définir le nombre et la dimension des lignes constituant la grille */
+    grid-template-rows: 50px 50px 50px;
+
+    /* Pour l'un comme pour l'autre :
+
+    - Le nombre de ligne ou de colonne dépend du nombre de paramètres.
+    - La dimension des lignes et colonnes se fixe en pixel (px), en pourcentage (%) ou automatiquement (auto).
+
+    La dimension peut aussi se définir en fraction (fr), ce que nous allons voir ensuite.
+    */
+}
+
+.container > div{
+    padding: 10px;
+    font-size: 2em;
+    text-align: center;
+    color: white;
+
+    opacity: 0.5;
+}
+
+
+/* Les lignes qui suivent servent à colorer différenmment les éléments */
+.container > div:nth-child(1n){
+    background-color: rgb(218, 135, 28);
+}
+.container > div:nth-child(2n){
+    background-color: rgb(15, 129, 206);
+}
+.container > div:nth-child(3n){
+    background-color: rgb(151, 84, 240);
+}
+.container > div:nth-child(4n){
+    background-color: rgb(30, 179, 0);
+}
+
+.container > div:hover{
+    opacity: 1;
+}
