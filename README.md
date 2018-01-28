@@ -1,3 +1,3 @@
 # CSS-Grid
 
-## Première étape : création et paramétrage d'une grille
+## Deuxième étape : l'unité de fraction
