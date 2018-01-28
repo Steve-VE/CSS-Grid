@@ -32,7 +32,20 @@ Amusez-vous et modifiez les à votre guise. Essayez de modifier les différents 
 
 ## Comment créer une grille CSS ?
   
-Pour créer une grille en CSS, rien de plus simple... Il vous suffit 
+Pour créer une grille en CSS, rien de plus simple... Il vous suffit d'appliquer la propriété `display: grid` à l'élément qui contiendra votre grille :  
 ``` css
-display: grid;
+.container {
+  display: grid;
+}
 ```
+Il reste alors à définir comment vous voulez "découper" votre grille, et le tour est joué, ses sous-éléments se placeront dans la grille.
+``` css
+.container {
+  display: grid;
+  
+  grid-template-columns: 30% 60%;
+  
+  grid-template-rows: 50px 80% 50px;
+}
+```
+
