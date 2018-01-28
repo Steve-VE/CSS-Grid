@@ -48,4 +48,10 @@ Il reste alors à définir comment vous voulez "découper" votre grille, et le t
   grid-template-rows: 50px 80% 50px;
 }
 ```
+Mais ça, ce n'est que l'introduction... Il y a bien des choses à faire et à apprendre à propos des grilles CSS, mais rien de bien compliqué :smiley:
 
+
+
+## Où en apprendre d'avantage ?
+
+Sur [Scrimba](https://scrimba.com/ "Lien vers Scrimba") :uk:, une plateforme de cours interactifs, vous pourrez trouver un [cours](https://scrimba.com/g/gR8PTE "Lien vers le cours") vraiment complet à ce sujet.  
