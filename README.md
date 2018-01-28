@@ -3,7 +3,7 @@
 ## CCS Grid, kézako ?
 
 La _**grille CSS**_ (*CSS Grid*) est une méthode CSS accepté par la majeur partie des navigateurs web depuis 2017 et qui permet d'établir rapidement et facilement len *layout* (mise en page) d'une page web reposant sur le principe d'une grille.  
-En facilitant la conception du layout, elle nous permet de se passer de certain framework ( ex.: [Bootstrap] (https://getbootstrap.com/ "link to Bootstrap") ) ou de créer une multitude de *div/span* associés à du CSS en *code spaghetti* dans l'unique but de simplement mettre en forme une page web...  
+En facilitant la conception du layout, elle nous permet de se passer de certain framework ex.: [Bootstrap] (https://getbootstrap.com/ "link to Bootstrap") ou de créer une multitude de *div/span* associés à du CSS en *code spaghetti* dans l'unique but de simplement mettre en forme une page web...  
 
 Puisque les grilles CSS nécessite simplement d'utiliser quelques divs imbriqués auxquelles ont attribu une classe, et quelques règles en CSS, elles sont très faciles à utiliser.  
 
