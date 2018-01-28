@@ -11,66 +11,67 @@ body{
     display: grid;
     grid-gap: 4px;
 
-    grid-template-rows: 100px 50px;
-    grid-template-columns: repeat(3, 1fr);
+    /* Pour définir la taille de la grille, on change de logique...
+    Ici, on va plutot diviser la grille en 10 lignes et 12 colonnes
+    et ensuite assigner à chaque élément occupant la grille une dimension différente.
+    */
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+
+    /* Pour que le découpage soit plus facile à visualiser, 
+    j'ai placé une image de fond aux éléments qui constitue la grille. 
+    Comme pour une feuille quadrillée, vous pouvez voir la grille en fond. 
+    */
 }
 
 
 .header{
-    /* Avec "grid-column-start", on indique où commence l'espace qu'occupe l'élément. */
-    grid-column-start: 1;
+    grid-column: 1 / -1;
 
-    /* Avec "grid-column-end", on indique jusqu'où va l'espace qu'occupe l'élément.
+    /* On dit ici qu'on veut que le header occupe 
+    verticalement l'espace qui correspond à deux lignes.
     */
-    grid-column-end: 4;
+    grid-row: span 2;
 
-    /* Ici, on indique donc que notre header devra occuper un espace dans le tableau qui part
-    de la première colonne (inclue) à la quatrième colonne (exclue).
-    En effet, faite le test, si on met "3" en "grid-column-end",
-    l'espace qu'occupe le header va s'arrêter juste avant la troisième colonne.
-
-    Encore une fois, il existe une manière raccourci d'écrire cela...
-    Ainsi, "grid-column : 1 / 4" revient exactement au même que ce 
-    que nous avons écrit ci-dessus ( le paramètre devant le "/" 
-    étant le "start" et celui derrière le "/" étant le "end" ).
-
-
-    Petite astuce :
-
-    Ici, on sait que la grille est constituée de 3 colonnes,
-    et que pour qu'un élément occupe toute la grille horizontalement,
-    il faut lui dire qu'il l'occupe jusqu'à la quatrième colonne.
-
-    Comment faire lorsque l'on ne connait pas d'avance le nombre 
-    de colonne constituant la grille ?
-
-    Il suffit d'utiliser un nombre négatif !
-    En effet, en utilisant un nombre négatif, on lui indique de partir 
-    de la gauche, donc de la fin, de la grille.
-
-    Ainsi, en faisant "grid-column-end: -1", l'espace qu'occupe cet
-    élément dans le tableau s'arrêtera à la dernière colonne (inclue).
-    */
+    background-image: url("img/12x2.png");
+    background-size: 100% 100%;
 }
 
 .footer{
-    grid-column: 1 / span 3;
-     /* Ici, même si le résultat est le même, 
-     nous utilisons une technique légèrement différente... 
-        - Pour le paramètre start, aucun changement;
-        - Pour le paramètre de end par contre, le "span" permet de signifier 
-          que l'espace occupé doit correspondre à 3 colonnes.
-          Ainsi, au lieu de nous préoccuper de où doit s'arrêter
-          l'espace qu'occupe notre élément, on s'intéresse
-          directement au nombre de colonne qu'occupe notre élément.
-    */
+    grid-column: 1 / -1;
+
+    background-image: url("img/12x1.png");
+    background-size: 100% 100%;
 }
 
 .menu{
-    /* La même chose est bien évidemment valable pour les lignes. */
-    grid-row-start: 2;
-    grid-row-end: span 3;
+    /* Ici, on précise que notre menu doit faire
+    2 colonnes de largeur et
+    7 lignes de hauteur.
+     */
+    grid-column: span 2;
+    grid-row: span 7;
+
+    background-image: url("img/2x7.png");
+    background-size: 100% 100%;
 }
+
+.content{
+    grid-column: span 5;
+
+    background: url("img/5x1.png");
+    background-size: 100% 100%;
+}
+
+.featured{
+    grid-column: span 10;
+    grid-row: span 4;
+
+    background-image: url("img/10x4.png");
+    background-size: 100% 100%;
+}
+
+
 
 
 .container > div{
@@ -81,23 +82,22 @@ body{
     padding: 10px;
     font-size: 2em;
     color: white;
+    background-color: rgb(151, 84, 240);
     opacity: 0.5;
 }
 
+
 /* Les lignes qui suivent servent à colorer différenmment les éléments */
-.container > div:nth-child(2n){
+.container > div:nth-child(3){
     background-color: rgb(15, 129, 206);
-}
-.container > div:nth-child(2n + 1){
-    background-color: rgb(151, 84, 240);
 }
 .container > div:first-child,
 .container > div:last-child{
     background-color: rgb(218, 135, 28);
 }
-/* .container > div:nth-child(4n){
+.container > div:nth-child(2){
     background-color: rgb(30, 179, 0);
-} */
+}
 
 .container > div:hover{
     opacity: 1;
