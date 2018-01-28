@@ -8,22 +8,32 @@ body{
 .container{
     margin: auto;
     width: 60%;
-    
-    /* "display: grid" pour indiquer que cet élément est une grille */
     display: grid;
+
+    /* La propriété "grid-gap" permet de définir un espace entre les éléments constituant le tableau */
+    grid-gap: 4px;
     
-    /* "grid-template-columns" permet de définir le nombre et la dimension des colonnes constituant la grille */
-    grid-template-columns: 100px auto;
+    /* La notion de fraction (fr) permet de définir une taille automatiquement 
+    qui se base sur le nombre de fraction que doit occuper chaque espace...  */
+    grid-template-columns: 4fr 1fr 2fr;
+    /*
+    Dans l'exemple ce-dessus, nous divisons notre grille en 3 colonnes :
+        - La première occupe un espace de 4 fractions;
+        - La seconde occupe un espace d'une seule fraction;
+        - Et la troisième et dernière colonne occupe un espace de 2fr.
+    La taille d'une fraction est calculé automatiquement. 
+    Par exemple, admettons que le tableau ait une largeur de 1400 px, 
+    vu que nous le divisons ici en 7 fractions ( 4fr + 1fr + 2fr = 7fr ), 
+    chaque fraction aura une valeur de 1400 px divisé par 7, soit 200 px. 
     
-    /* "grid-template-rows" permet de définir le nombre et la dimension des lignes constituant la grille */
-    grid-template-rows: 50px 50px 50px;
+    Dans ce cas de figure, la première colonne aura une largeur de 800 px ( 4 * 200 ),
+    la seconde aura une largeur de 200 px ( 1 * 200 )
+    et la troisième aura une largeur de 400 px ( 2 * 200 ).
 
-    /* Pour l'un comme pour l'autre :
-
-    - Le nombre de ligne ou de colonne dépend du nombre de paramètres.
-    - La dimension des lignes et colonnes se fixe en pixel (px), en pourcentage (%) ou automatiquement (auto).
-
-    La dimension peut aussi se définir en fraction (fr), ce que nous allons voir ensuite.
+    Ce qui est intéressant dans l'unité fr, c'est que sa valeur s'adapte automatiquement.
+    Ainsi, peu importe si la page est redimensionnée ou si elle s'affiche sur 
+    des supports de différentes dimensions, la dimension des cases consitutant 
+    la grille s'adapteront automatiquement à la dimension réelle de celle-ci. 
     */
 }
 
@@ -47,9 +57,9 @@ body{
 .container > div:nth-child(3n){
     background-color: rgb(151, 84, 240);
 }
-.container > div:nth-child(4n){
+/* .container > div:nth-child(4n){
     background-color: rgb(30, 179, 0);
-}
+} */
 
 .container > div:hover{
     opacity: 1;
